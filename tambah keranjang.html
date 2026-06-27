@@ -1,132 +1,193 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Keranjang Belanja</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keranjang Belanja</title>
 
-    .product {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 10px;
-      width: 200px;
-    }
+<style>
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f0ff;
+    margin:0;
+}
 
-    button {
-      padding: 5px 10px;
-      cursor: pointer;
-    }
+nav{
+    background:#6A0DAD;
+    padding:15px;
+    text-align:center;
+}
 
-    #cart {
-      margin-top: 20px;
-      border-top: 2px solid #000;
-      padding-top: 10px;
-    }
-  </style>
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+h2{
+    text-align:center;
+    color:#6A0DAD;
+    margin-top:30px;
+}
+
+table{
+    width:80%;
+    margin:20px auto;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background:#6A0DAD;
+    color:white;
+}
+
+button{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkred;
+}
+
+.total{
+    width:80%;
+    margin:auto;
+    text-align:right;
+    font-size:22px;
+    font-weight:bold;
+    color:#6A0DAD;
+}
+
+.checkout{
+    display:block;
+    width:200px;
+    margin:30px auto;
+    text-align:center;
+    background:#6A0DAD;
+    color:white;
+    padding:15px;
+    text-decoration:none;
+    border-radius:10px;
+}
+</style>
+
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="produk.html">Produk</a>
-        <a href="about.html">Tentang Kami</a>
-        <a href="kontak.html">kontak</a>
-        <a href="tambah keranjang.html">keranjang</a>
-        <a href="via pembayaran.html">via pembayaran</a>
-    </nav>
 
-<body>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="produk.html">Produk</a>
+    <a href="tambah keranjang.html">Keranjang</a>
+</nav>
 
-<h2> Produk Toko</h2>
+<h2>🛒 Keranjang Belanja</h2>
 
-<div class="product">
-  <p>Nama: top lengan panjang</p>
-  <p>Harga: Rp125.000</p>
-  <button onclick="addToCart('top lengan panjang', 125.000)">Tambah</button>
-</div>
+<table>
 
-<div class="product">
-  <p>Nama: rok pendek</p>
-  <p>Harga: Rp100.000</p>
-  <button onclick="addToCart('rok pendek', 1000.000)">Tambah</button>
-</div>
+<thead>
 
-<div class="product">
-  <p>Nama: kemeja</p>
-  <p>Harga: Rp130.000</p>
-  <button onclick="addToCart('kemeja', 130.000)">Tambah</button>
-</div>
-<div class="product">
-  <p>Nama: kemeja botting</p>
-  <p>Harga: Rp110.000</p>
-  <button onclick="addToCart('kemeja', 110.000)">Tambah</button>
-</div>
-<div class="product">
-  <p>Nama: ribben henley</p>
-  <p>Harga: Rp90.000</p>
-  <button onclick="addToCart('kemeja', 90.000)">Tambah</button>
-</div>
-<div class="product">
-  <p>Nama: celana hotpants</p>
-  <p>Harga: Rp80.000</p>
-  <button onclick="addToCart('kemeja', 80.000)">Tambah</button>
-</div>
-<div class="product">
-  <p>Nama: sweatpants</p>
-  <p>Harga: Rp145.000</p>
-  <button onclick="addToCart('kemeja', 145.000)">Tambah</button>
-</div>
-<div class="product">
-  <p>Nama: flared top blouse</p>
-  <p>Harga: Rp255.000</p>
-  <button onclick="addToCart('kemeja', 255.000)">Tambah</button>
-</div>
-<div class="product">
-  <p>Nama: jeans</p>
-  <p>Harga: Rp260.000</p>
-  <button onclick="addToCart('kemeja', 260.000)">Tambah</button>
+<tr>
+<th>Produk</th>
+<th>Harga</th>
+<th>Jumlah</th>
+<th>Subtotal</th>
+<th>Aksi</th>
+</tr>
+
+</thead>
+
+<tbody id="isiKeranjang">
+
+</tbody>
+
+</table>
+
+<div class="total" id="totalHarga">
+Total : Rp0
 </div>
 
-<h2>Keranjang</h2>
-<div id="cart"></div>
-
-<h3 id="total">Total: Rp0</h3>
+<a href="via pembayaran.html" class="checkout">
+Lanjut Pembayaran
+</a>
 
 <script>
-  let cart = [];
-  let total = 0;
 
-  function addToCart(name, price) {
-    cart.push({ name, price });
-    total += price;
-    renderCart();
-  }
+let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 
-  function removeItem(index) {
-    total -= cart[index].price;
-    cart.splice(index, 1);
-    renderCart();
-  }
+function tampilKeranjang(){
 
-  function renderCart() {
-    let cartDiv = document.getElementById("cart");
-    cartDiv.innerHTML = "";
+let isi=document.getElementById("isiKeranjang");
 
-    cart.forEach((item, index) => {
-      cartDiv.innerHTML += `
-        <p>
-          ${item.name} - Rp${item.price}
-          <button onclick="removeItem(${index})">Hapus</button>
-        </p>
-      `;
-    });
+isi.innerHTML="";
 
-    document.getElementById("total").innerText = "Total: Rp" + total;
-  }
+let total=0;
+
+keranjang.forEach((produk,index)=>{
+
+let subtotal=produk.harga*produk.jumlah;
+
+total+=subtotal;
+
+isi.innerHTML+=`
+
+<tr>
+
+<td>${produk.nama}</td>
+
+<td>Rp ${produk.harga.toLocaleString()}</td>
+
+<td>${produk.jumlah}</td>
+
+<td>Rp ${subtotal.toLocaleString()}</td>
+
+<td>
+
+<button onclick="hapusProduk(${index})">
+
+Hapus
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("totalHarga").innerHTML="Total : Rp "+total.toLocaleString();
+
+}
+
+function hapusProduk(index){
+
+keranjang.splice(index,1);
+
+localStorage.setItem("keranjang",JSON.stringify(keranjang));
+
+tampilKeranjang();
+
+}
+
+tampilKeranjang();
+
 </script>
 
 </body>
+</html>
 </html>
