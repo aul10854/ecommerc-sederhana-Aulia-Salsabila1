@@ -1,192 +1,35 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pembayaran Virtual Account</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    background:linear-gradient(135deg,#FFB6C1,#FF69B4);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-}
-
-.container{
-    width:420px;
-    background:#fff;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-}
-
-h2{
-    text-align:center;
-    color:#6A0DAD;
-    margin-bottom:10px;
-}
-
-.subtitle{
-    text-align:center;
-    color:#FF1493;
-    margin-bottom:25px;
-}
-
-.bank{
-    background:#FFB6C1;
-    padding:15px;
-    border-radius:12px;
-    margin-bottom:20px;
-}
-
-.bank h3{
-    color:#6A0DAD;
-}
-
-.va-box{
-    background:#FFB6C1;
-    border:2px dashed #8A2BE2;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
-    margin:20px 0;
-}
-
-.va-number{
-    font-size:28px;
-    font-weight:bold;
-    color:#4B0082;
-    letter-spacing:2px;
-}
-
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    background:#7B2CBF;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:.3s;
-    margin-top:10px;
-}
-
-button:hover{
-    background:#5A189A;
-}
-
-.info{
-    margin-top:20px;
-    font-size:14px;
-    color:#555;
-}
-
-.info li{
-    margin-bottom:8px;
-}
-
-.success{
-    display:none;
-    margin-top:20px;
-    background:#d4edda;
-    color:#155724;
-    padding:15px;
-    border-radius:10px;
-    text-align:center;
-    font-weight:bold;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Pembayaran</title>
 </head>
+<body>
 
-<div class="container">
+    <h2>Pilih Metode Pembayaran</h2>
 
-<h2>Pembayaran Virtual Account</h2>
+    <form action="proses.html">
 
-<p class="subtitle">
-Silakan lakukan pembayaran menggunakan nomor Virtual Account berikut.
-</p>
+        <input type="radio" name="pembayaran" value="transfer" required>
+        Transfer Bank
+        <br><br>
 
-<div class="bank">
-<h3>Bank BCA Virtual Account</h3>
-<p>bila store</p>
-</div>
+        <input type="radio" name="pembayaran" value="qris">
+        QRIS
+        <br><br>
 
-<div class="va-box">
+        <input type="radio" name="pembayaran" value="cod">
+        Bayar di Tempat (COD)
+        <br><br>
 
-<p>Nomor Virtual Account</p>
+        <input type="radio" name="pembayaran" value="ewallet">
+        E-Wallet (DANA, OVO, GoPay)
+        <br><br>
 
-<div class="va-number" id="vaNumber">
-8808123456789012
-</div>
+        <button type="submit">Lanjutkan</button>
 
-</div>
-
-<button onclick="copyVA()">
-📋 Copy Nomor VA
-</button>
-
-<button onclick="finishPayment()">
-✔ Saya Sudah Membayar
-</button>
-
-<div class="success" id="successMessage">
-Pembayaran Berhasil 🎉
-<br><br>
-Terima kasih telah berbelanja di bila store.
-</div>
-
-<div class="info">
-
-<h4>Cara Pembayaran</h4>
-
-<ul>
-<li>Buka aplikasi Mobile Banking.</li>
-<li>Pilih menu Virtual Account.</li>
-<li>Masukkan nomor VA.</li>
-<li>Periksa nominal pembayaran.</li>
-<li>Konfirmasi pembayaran.</li>
-</ul>
-
-</div>
-
-</div>
-
-<script>
-
-function copyVA(){
-
-let text=document.getElementById("vaNumber").innerText;
-
-navigator.clipboard.writeText(text);
-
-alert("Nomor Virtual Account berhasil disalin!");
-
-}
-
-function finishPayment(){
-
-document.getElementById("successMessage").style.display="block";
-
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
-});
-
-}
-
-</script>
+    </form>
 
 </body>
+</html>
 </html>
