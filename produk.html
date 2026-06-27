@@ -188,7 +188,23 @@ function tambahKeranjang(nama,harga){
 }
 
 </script>
+<script>
+function tambahKeranjang(nama,harga){
 
+let keranjang=JSON.parse(localStorage.getItem("keranjang")) || [];
+
+keranjang.push({
+nama:nama,
+harga:harga,
+jumlah:1
+});
+
+localStorage.setItem("keranjang",JSON.stringify(keranjang));
+
+alert("Produk berhasil ditambahkan ke keranjang!");
+
+}
+</script>
 </body>
 </html>
 <nav>
