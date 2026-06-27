@@ -90,59 +90,106 @@
             <img src="top lengan panjang.jpeg" width="200">
             <h3>Top Lengan Panjang</h3>
             <p class="harga">Rp 125.000</p>
-            <button>Beli</button>
+          <button onclick="tambahKeranjang('Top Lengan Panjang',125000)">
+    Beli
+</button>
         </div>
 
         <div class="produk">
              <img src="rok pendek.jpeg" width="200">
             <h3>rok pendek</h3>
             <p class="harga">Rp 100.000</p>
-            <button>Beli</button>
+           <button onclick="tambahKeranjang('Rok Pendek',100000)">
+    Beli
+</button>
         </div>
 
         <div class="produk">
             <img src="kemeja.jpeg" width="200">
             <h3>Kemeja</h3>
             <p class="harga">Rp 130.000</p>
-            <button>Beli</button>
+            <button onclick="tambahKeranjang('kemeja',130000)">
+    Beli
         </div>
         <div class="produk">
             <img src="kemeja botting.jpeg" width="200">
             <h3>Kemeja botting</h3>
             <p class="harga">Rp 110.000</p>
-            <button>Beli</button>
+            <button onclick="tambahKeranjang('kemeja botting',110000)">
+    Beli
         </div>
          <div class="produk">
             <img src="ribben henley.jpeg" width="200">
             <h3>ribben henley</h3>
             <p class="harga">Rp 90.000</p>
-            <button>Beli</button>
+            <button onclick="tambahKeranjang('Ribben henley',90000)">
+    Beli
         </div>
  <div class="produk">
             <img src="celana hotpants.jpeg" width="200">
             <h3>celana hotpants</h3>
             <p class="harga">Rp 80.000</p>
-            <button>Beli</button>
+            <button onclick="tambahKeranjang('ceana hotpants',80000)">
+    Beli
         </div>
         <div class="produk">
             <img src="sweatpants.jpeg" width="200">
             <h3>sweatpants</h3>
             <p class="harga">Rp 145.000</p>
-            <button>Beli</button>
+           <button onclick="tambahKeranjang('sweatpants',145000)">
+    Beli
         </div>
          <div class="produk">
             <img src="flared top blouse.jpeg" width="200">
             <h3>flared top blouse</h3>
             <p class="harga">Rp 255.000</p>
-            <button>Beli</button>
+            <button onclick="tambahKeranjang('flared top blouse',255000)">
+    Beli
         </div>
         <div class="produk">
             <img src="jeans.jpeg" width="200">
             <h3>jeans</h3>
             <p class="harga">Rp 260.000</p>
-            <button>Beli</button>
+            <button onclick="tambahKeranjang('jeans',260000)">
+    Beli
         </div>
 
     </div>
 </body>
+    <body>
+
+<div id="notif" class="notif">
+    ✔ Produk berhasil ditambahkan ke keranjang!
+</div>
+</div>
+
+<script>
+
+function tambahKeranjang(nama,harga){
+
+    let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+
+    keranjang.push({
+        nama:nama,
+        harga:harga,
+        jumlah:1
+    });
+
+    localStorage.setItem("keranjang",JSON.stringify(keranjang));
+
+    let notif = document.getElementById("notif");
+    notif.innerHTML="🛒 "+nama+" berhasil ditambahkan ke keranjang!";
+    notif.style.display="block";
+
+    setTimeout(function(){
+        notif.style.display="none";
+    },2000);
+
+}
+
+</script>
+
+</body>
+</html>
+<nav>
 </html>
