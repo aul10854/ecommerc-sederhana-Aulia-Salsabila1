@@ -6,30 +6,43 @@
 </head>
 <body>
 
-    <h2>Pilih Metode Pembayaran</h2>
+<h2>Pilih Metode Pembayaran</h2>
 
-    <form action="proses.html">
+<form id="formPembayaran">
 
-        <input type="radio" name="pembayaran" value="transfer" required>
-        Transfer Bank
-        <br><br>
+    <input type="radio" name="pembayaran" value="transfer.html" required>
+    Transfer Bank
+    <br><br>
 
-        <input type="radio" name="pembayaran" value="qris">
-        QRIS
-        <br><br>
+    <input type="radio" name="pembayaran" value="qris.html">
+    QRIS
+    <br><br>
 
-        <input type="radio" name="pembayaran" value="cod">
-        Bayar di Tempat (COD)
-        <br><br>
+    <input type="radio" name="pembayaran" value="cod.html">
+    Bayar di Tempat (COD)
+    <br><br>
 
-        <input type="radio" name="pembayaran" value="ewallet">
-        E-Wallet (DANA, OVO, GoPay)
-        <br><br>
+    <input type="radio" name="pembayaran" value="ewallet.html">
+    E-Wallet (DANA, OVO, GoPay)
+    <br><br>
 
-        <button type="submit">Lanjutkan</button>
+    <button type="submit">Lanjutkan</button>
 
-    </form>
+</form>
+
+<script>
+document.getElementById("formPembayaran").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const metode = document.querySelector('input[name="pembayaran"]:checked');
+
+    if (metode) {
+        window.location.href = metode.value;
+    } else {
+        alert("Silakan pilih metode pembayaran.");
+    }
+});
+</script>
 
 </body>
-</html>
 </html>
