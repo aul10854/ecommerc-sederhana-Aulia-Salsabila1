@@ -1,32 +1,115 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>E-Wallet</title>
+<meta charset="UTF-8">
+<title>E-Wallet</title>
+
+<style>
+    body {
+        background: linear-gradient(135deg, #ffb6d5, #ff69b4);
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        margin: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        background: white;
+        padding: 45px;
+        border-radius: 20px;
+        width: 400px;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        transition: 0.3s ease;
+    }
+
+    .box:hover {
+        transform: translateY(-5px);
+    }
+
+    h2 {
+        color: #d63384;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        text-align: left;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    input {
+        transform: scale(1.2);
+        margin-right: 10px;
+        accent-color: hotpink;
+    }
+
+    .btn {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    button {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.2s ease;
+    }
+
+    .back {
+        background: #ccc;
+    }
+
+    .back:hover {
+        background: #bbb;
+    }
+
+    .pay {
+        background: linear-gradient(135deg, #ff4da6, #ff1493);
+        color: white;
+        box-shadow: 0 8px 18px rgba(255,20,147,0.3);
+    }
+
+    .pay:hover {
+        transform: scale(1.05);
+    }
+
+    .pay:active {
+        transform: scale(0.95);
+    }
+</style>
 </head>
+
 <body>
 
-<h2>Pembayaran E-Wallet</h2>
+<div class="box">
 
-<form action="konfirmasi_pembayaran.html">
+    <h2>Pembayaran E-Wallet</h2>
 
-    <label><input type="radio" name="ewallet" value="DANA" required> DANA</label><br>
-    <label><input type="radio" name="ewallet" value="OVO"> OVO</label><br>
-    <label><input type="radio" name="ewallet" value="GoPay"> GoPay</label><br>
-    <label><input type="radio" name="ewallet" value="ShopeePay"> ShopeePay</label><br><br>
+    <form action="konfirmasi_pembayaran.html">
 
-    <button type="button" onclick="history.back()">← Kembali</button>
+        <label><input type="radio" name="ewallet" required> DANA</label>
+        <label><input type="radio" name="ewallet"> OVO</label>
+        <label><input type="radio" name="ewallet"> GoPay</label>
+        <label><input type="radio" name="ewallet"> ShopeePay</label>
 
-    <button type="submit">Bayar</button>
-<form action="konfirmasi_pembayaran.html">
-</form>
-</form>
-  <style>
-        body {
-            background-color: pink;
-        }
-    </style>
+        <div class="btn">
+            <button type="button" class="back" onclick="history.back()">← Kembali</button>
+            <button type="submit" class="pay">Bayar</button>
+        </div>
 
-</head>
+    </form>
+
+</div>
+
 </body>
 </html>
