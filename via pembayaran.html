@@ -1,62 +1,133 @@
- <!DOCTYPE html>
+syang buat lebih gedean dong ini tulisannya <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Transfer Bank</title>
+<meta charset="UTF-8">
+<title>Pembayaran</title>
 
-    <style>
-        body{
-            background-color:pink;
-            font-family:Arial, sans-serif;
-            text-align:center;
-            margin-top:50px;
-        }
+<style>
+    body {
+        background: linear-gradient(135deg, #ffb6d5, #ff69b4);
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
 
-        .box{
-            background:white;
-            width:400px;
-            margin:auto;
-            padding:20px;
-            border-radius:10px;
-            box-shadow:0 0 10px gray;
-        }
+    .box {
+        text-align: center;
+        background: white;
+        padding: 50px;
+        border-radius: 20px;
+        width: 420px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        transition: 0.3s ease;
+    }
 
-        button{
-            background:#6A0DAD;
-            color:white;
-            border:none;
-            padding:10px 20px;
-            border-radius:5px;
-            cursor:pointer;
-            margin:10px;
-        }
+    .box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+    }
 
-        button:hover{
-            background:#4B0082;
-        }
-    </style>
+    h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #d63384;
+    }
 
+    input {
+        transform: scale(1.2);
+        margin-right: 10px;
+        accent-color: hotpink;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    .option {
+        text-align: left;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 10px;
+        transition: 0.2s;
+    }
+
+    .option:hover {
+        background: #ffe4f1;
+    }
+
+    button {
+        padding: 14px 28px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        background: linear-gradient(135deg, #ff4da6, #ff1493);
+        color: white;
+        font-size: 18px;
+        margin-top: 20px;
+        transition: 0.2s ease;
+        box-shadow: 0 8px 18px rgba(255,20,147,0.3);
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 25px rgba(255,20,147,0.4);
+    }
+
+    button:active {
+        transform: scale(0.95);
+    }
+</style>
 </head>
+
 <body>
 
 <div class="box">
 
-<h2>🏦 Pembayaran Transfer Bank</h2>
+    <h2>Pilih Metode Pembayaran</h2>
 
-<p><b>Bank:</b> BCA</p>
-<p><b>No. Rekening:</b> 1234567890</p>
-<p><b>Atas Nama:</b> Bila Store</p>
+    <form id="formPembayaran">
 
-<p>Silakan transfer sesuai total belanja Anda.</p>
-<p>Setelah transfer berhasil, klik tombol di bawah.</p>
+        <div class="option">
+            <input type="radio" name="pembayaran" value="transfer.html" required>
+            Transfer Bank
+        </div>
 
-<a href="konfirmasi_pembayaran.html">
-    <button>Saya Sudah Transfer</button>
-</a>
+        <div class="option">
+            <input type="radio" name="pembayaran" value="qris.html">
+            QRIS
+        </div>
 
-<button onclick="history.back()">← Kembali</button>
+        <div class="option">
+            <input type="radio" name="pembayaran" value="cod.html">
+            Bayar di Tempat (COD)
+        </div>
 
+        <div class="option">
+            <input type="radio" name="pembayaran" value="ewallet.html">
+            E-Wallet (DANA, OVO, GoPay, shopeepay)
+        </div>
+
+        <button type="submit">Lanjutkan</button>
+
+    </form>
 </div>
+
+<script>
+document.getElementById("formPembayaran").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const metode = document.querySelector('input[name="pembayaran"]:checked');
+
+    if (metode) {
+        window.location.href = metode.value;
+    } else {
+        alert("Silakan pilih metode pembayaran.");
+    }
+});
+</script>
 
 </body>
 </html>
