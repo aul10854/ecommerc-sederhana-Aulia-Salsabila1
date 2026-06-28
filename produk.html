@@ -163,47 +163,38 @@
    
 </div>
 </div>
-
-<script>
-
-function tambahKeranjang(nama,harga){
+        
+</script>
+        <script>
+function tambahKeranjang(nama, harga){
 
     let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 
-    keranjang.push({
-        nama:nama,
-        harga:harga,
-        jumlah:1
-    });
+    let produk = keranjang.find(item => item.nama === nama);
 
-    localStorage.setItem("keranjang",JSON.stringify(keranjang));
+    if(produk){
+        produk.jumlah += 1;
+    }else{
+        keranjang.push({
+            nama: nama,
+            harga: harga,
+            jumlah: 1
+        });
+    }
+
+    localStorage.setItem("keranjang", JSON.stringify(keranjang));
 
     let notif = document.getElementById("notif");
-    notif.innerHTML="🛒 "+nama+" berhasil ditambahkan ke keranjang!";
-    notif.style.display="block";
+    if(notif){
+        notif.innerHTML = "🛒 " + nama + " berhasil ditambahkan ke keranjang!";
+        notif.style.display = "block";
 
-    setTimeout(function(){
-        notif.style.display="none";
-    },2000);
-
-}
-
-</script>
-<script>
-function tambahKeranjang(nama,harga){
-
-let keranjang=JSON.parse(localStorage.getItem("keranjang")) || [];
-
-keranjang.push({
-nama:nama,
-harga:harga,
-jumlah:1
-});
-
-localStorage.setItem("keranjang",JSON.stringify(keranjang));
-
-alert("Produk berhasil ditambahkan ke keranjang!");
-
+        setTimeout(function(){
+            notif.style.display = "none";
+        },2000);
+    }else{
+        alert("Produk berhasil ditambahkan ke keranjang!");
+    }
 }
 </script>
 </body>
