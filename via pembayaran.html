@@ -1,38 +1,85 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Pembayaran</title>
+<meta charset="UTF-8">
+<title>Pembayaran</title>
 
-    <style>
-        body {
-            background-color: pink;
-            font-family: Arial, sans-serif;
+<style>
+    body {
+        background: linear-gradient(135deg, #ffb6d5, #ff69b4);
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
 
-          
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .box {
+        text-align: center;
+        background: white;
+        padding: 50px;
+        border-radius: 20px;
+        width: 420px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        transition: 0.3s ease;
+    }
 
-        .box {
-            text-align: center;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            width: 300px;
-        }
+    .box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+    }
 
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            background: hotpink;
-            color: white;
-        }
-    </style>
+    h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #d63384;
+    }
+
+    input {
+        transform: scale(1.2);
+        margin-right: 10px;
+        accent-color: hotpink;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    .option {
+        text-align: left;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 10px;
+        transition: 0.2s;
+    }
+
+    .option:hover {
+        background: #ffe4f1;
+    }
+
+    button {
+        padding: 14px 28px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        background: linear-gradient(135deg, #ff4da6, #ff1493);
+        color: white;
+        font-size: 18px;
+        margin-top: 20px;
+        transition: 0.2s ease;
+        box-shadow: 0 8px 18px rgba(255,20,147,0.3);
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 25px rgba(255,20,147,0.4);
+    }
+
+    button:active {
+        transform: scale(0.95);
+    }
+</style>
 </head>
 
 <body>
@@ -43,26 +90,29 @@
 
     <form id="formPembayaran">
 
-        <input type="radio" name="pembayaran" value="transfer.html" required>
-        Transfer Bank
-        <br><br>
+        <div class="option">
+            <input type="radio" name="pembayaran" value="transfer.html" required>
+            Transfer Bank
+        </div>
 
-        <input type="radio" name="pembayaran" value="qris.html">
-        QRIS
-        <br><br>
+        <div class="option">
+            <input type="radio" name="pembayaran" value="qris.html">
+            QRIS
+        </div>
 
-        <input type="radio" name="pembayaran" value="cod.html">
-        Bayar di Tempat (COD)
-        <br><br>
+        <div class="option">
+            <input type="radio" name="pembayaran" value="cod.html">
+            Bayar di Tempat (COD)
+        </div>
 
-        <input type="radio" name="pembayaran" value="ewallet.html">
-        E-Wallet (DANA, OVO, GoPay)
-        <br><br>
+        <div class="option">
+            <input type="radio" name="pembayaran" value="ewallet.html">
+            E-Wallet (DANA, OVO, GoPay)
+        </div>
 
         <button type="submit">Lanjutkan</button>
 
     </form>
-
 </div>
 
 <script>
