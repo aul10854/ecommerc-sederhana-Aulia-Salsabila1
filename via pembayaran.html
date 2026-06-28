@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>Pembayaran</title>
-
 <style>
     body {
         background: linear-gradient(135deg, #ffb6d5, #ff69b4);
@@ -18,9 +12,9 @@
     .box {
         text-align: center;
         background: white;
-        padding: 50px;
+        padding: 60px;
         border-radius: 20px;
-        width: 420px;
+        width: 600px;
         box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         transition: 0.3s ease;
     }
@@ -31,27 +25,27 @@
     }
 
     h2 {
-        font-size: 26px;
-        margin-bottom: 20px;
+        font-size: 38px;
+        margin-bottom: 30px;
         color: #d63384;
+        font-weight: bold;
     }
 
     input {
-        transform: scale(1.2);
-        margin-right: 10px;
+        transform: scale(1.5);
+        margin-right: 15px;
         accent-color: hotpink;
-    }
-
-    label {
-        font-size: 18px;
     }
 
     .option {
         text-align: left;
-        margin: 10px 0;
-        padding: 10px;
-        border-radius: 10px;
+        margin: 15px 0;
+        padding: 18px;
+        border-radius: 12px;
         transition: 0.2s;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
     }
 
     .option:hover {
@@ -59,14 +53,15 @@
     }
 
     button {
-        padding: 14px 28px;
+        padding: 16px 40px;
         border: none;
-        border-radius: 12px;
+        border-radius: 15px;
         cursor: pointer;
         background: linear-gradient(135deg, #ff4da6, #ff1493);
         color: white;
-        font-size: 18px;
-        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 30px;
         transition: 0.2s ease;
         box-shadow: 0 8px 18px rgba(255,20,147,0.3);
     }
@@ -80,54 +75,3 @@
         transform: scale(0.95);
     }
 </style>
-</head>
-
-<body>
-
-<div class="box">
-
-    <h2>Pilih Metode Pembayaran</h2>
-
-    <form id="formPembayaran">
-
-        <div class="option">
-            <input type="radio" name="pembayaran" value="transfer.html" required>
-            Transfer Bank
-        </div>
-
-        <div class="option">
-            <input type="radio" name="pembayaran" value="qris.html">
-            QRIS
-        </div>
-
-        <div class="option">
-            <input type="radio" name="pembayaran" value="cod.html">
-            Bayar di Tempat (COD)
-        </div>
-
-        <div class="option">
-            <input type="radio" name="pembayaran" value="ewallet.html">
-            E-Wallet (DANA, OVO, GoPay, shopeepay)
-        </div>
-
-        <button type="submit">Lanjutkan</button>
-
-    </form>
-</div>
-
-<script>
-document.getElementById("formPembayaran").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const metode = document.querySelector('input[name="pembayaran"]:checked');
-
-    if (metode) {
-        window.location.href = metode.value;
-    } else {
-        alert("Silakan pilih metode pembayaran.");
-    }
-});
-</script>
-
-</body>
-</html>
