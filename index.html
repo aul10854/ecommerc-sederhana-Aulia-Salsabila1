@@ -12,6 +12,7 @@
         background: #FFC0CB;
     }
 
+    
     nav {
         background: #FFB6C1;
         display: flex;
@@ -21,20 +22,24 @@
 
     .logo {
         width: 50px;
-        margin-right: 20px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 15px;
     }
 
     nav a {
-        margin: 0 15px;
+        margin: 0 12px;
         text-decoration: none;
         color: white;
+        font-weight: bold;
     }
 
     nav a:hover {
         color: #ff69b4;
     }
 
-    /* HERO */
+   
     .hero {
         text-align: center;
         padding: 40px 20px;
@@ -44,12 +49,20 @@
     }
 
     .hero img {
-        width: 200px;
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
         margin: 10px;
-        border-radius: 10px;
     }
 
-    /* GALERI */
+  
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+ 
     .gallery {
         display: flex;
         justify-content: center;
@@ -60,6 +73,8 @@
 
     .gallery img {
         width: 180px;
+        height: 180px;
+        object-fit: cover;
         border-radius: 12px;
     }
 </style>
@@ -67,8 +82,10 @@
 
 <body>
 
+
 <nav>
-    <img src="logo.jpeg" class="logo">
+    
+    <img src="logo.png" class="logo" alt="logo">
 
     <a href="index.html">Home</a>
     <a href="produk.html">Produk</a>
@@ -77,22 +94,24 @@
     <a href="kontak.html">Kontak</a>
 </nav>
 
+
 <div class="hero">
     <h1>SELAMAT DATANG DI BILA STORE</h1>
     <p>Fashion kekinian untuk kamu 💖</p>
 
-    <!-- gambar fashion utama -->
-    <img src="https://images.unsplash.com/photo-1520975958225-2f8f8b8f8f8f" alt="">
-    <img src="https://images.unsplash.com/photo-1520975693411-2f8f8b8f8f8f" alt="">
+   
+    <img src="gambar1.jpg" alt="produk 1">
+    <img src="gambar2.jpg" alt="produk 2">
 </div>
 
-<h2 style="text-align:center;">Koleksi Fashion</h2>
+<h2>Koleksi Fashion</h2>
+
 
 <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1520975912150-1a2b3c4d" alt="">
-    <img src="https://images.unsplash.com/photo-1520975921234-1a2b3c4d" alt="">
-    <img src="https://images.unsplash.com/photo-1520975934567-1a2b3c4d" alt="">
-    <img src="https://images.unsplash.com/photo-1520975947890-1a2b3c4d" alt="">
+    <img src="produk1.jpg" alt="">
+    <img src="produk2.jpg" alt="">
+    <img src="produk3.jpg" alt="">
+    <img src="produk4.jpg" alt="">
 </div>
 
 </body>
