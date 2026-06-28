@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bilastore.id</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bila Store</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #FFC0CB;
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        background: #FFC0CB;
+    }
 
-        /* NAVBAR */
-        nav {
-            background: #FFB6C1;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-        }
+    nav {
+        background: #FFB6C1;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+    }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 16px;
-        }
+    .logo {
+        width: 50px;
+        margin-right: 20px;
+    }
 
-        nav a:hover {
-            color: #FF69B4;
-        }
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: white;
+    }
 
-        /* LOGO */
-        .logo {
-            width: 50px;
-            margin-right: 20px;
-        }
+    nav a:hover {
+        color: #ff69b4;
+    }
 
-        /* KONTEN TENGAH */
-        .container {
-            max-width: 800px;
-            margin: 80px auto;
-            background: white;
-            padding: 30px;
-            text-align: center; /* ini bikin tulisan di tengah */
-            border-radius: 10px;
-        }
+    /* HERO */
+    .hero {
+        text-align: center;
+        padding: 40px 20px;
+        background: white;
+        margin: 20px;
+        border-radius: 15px;
+    }
 
-        h1 {
-            color: #333;
-        }
-    </style>
+    .hero img {
+        width: 200px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    /* GALERI */
+    .gallery {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .gallery img {
+        width: 180px;
+        border-radius: 12px;
+    }
+</style>
 </head>
 
 <body>
@@ -65,14 +77,22 @@
     <a href="kontak.html">Kontak</a>
 </nav>
 
-<div class="container">
-    <h1>SELAMAT DATANG di BILA STORE</h1>
-    <p>Disini Kami Menjual Berbagai Fashion untuk Hidupkan Gayamu!</p>
-    <p><strong>YUK MULAI BERBELANJA SEKARANG!</strong></p>
+<div class="hero">
+    <h1>SELAMAT DATANG DI BILA STORE</h1>
+    <p>Fashion kekinian untuk kamu 💖</p>
 
-    <a href="about.html" style="font-size: 18px; color: #6666ff;">
-        Pergi ke halaman Tentang Kami
-    </a>
+    <!-- gambar fashion utama -->
+    <img src="https://images.unsplash.com/photo-1520975958225-2f8f8b8f8f8f" alt="">
+    <img src="https://images.unsplash.com/photo-1520975693411-2f8f8b8f8f8f" alt="">
+</div>
+
+<h2 style="text-align:center;">Koleksi Fashion</h2>
+
+<div class="gallery">
+    <img src="https://images.unsplash.com/photo-1520975912150-1a2b3c4d" alt="">
+    <img src="https://images.unsplash.com/photo-1520975921234-1a2b3c4d" alt="">
+    <img src="https://images.unsplash.com/photo-1520975934567-1a2b3c4d" alt="">
+    <img src="https://images.unsplash.com/photo-1520975947890-1a2b3c4d" alt="">
 </div>
 
 </body>
