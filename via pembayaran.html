@@ -1,28 +1,61 @@
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer Bank</title>
+
+    <style>
+        body{
+            background-color:pink;
+            font-family:Arial, sans-serif;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        .box{
+            background:white;
+            width:400px;
+            margin:auto;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        button{
+            background:#6A0DAD;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+            margin:10px;
+        }
+
+        button:hover{
+            background:#4B0082;
+        }
+    </style>
+
 </head>
 <body>
 
 <div class="box">
-    <h2>💳 Pilih Metode Pembayaran</h2>
 
-    <form action="proses_pembayaran.html">
+<h2>🏦 Pembayaran Transfer Bank</h2>
 
-        <label class="option">
-            <input type="radio" name="metode" value="transfer" required>
-            🏦 Transfer Bank
-        </label>
+<p><b>Bank:</b> BCA</p>
+<p><b>No. Rekening:</b> 1234567890</p>
+<p><b>Atas Nama:</b> Bila Store</p>
 
-        <label class="option">
-            <input type="radio" name="metode" value="ewallet">
-            📱 E-Wallet
-        </label>
+<p>Silakan transfer sesuai total belanja Anda.</p>
+<p>Setelah transfer berhasil, klik tombol di bawah.</p>
 
-        <label class="option">
-            <input type="radio" name="metode" value="cod">
-            🚚 Bayar di Tempat (COD)
-        </label>
+<a href="konfirmasi_pembayaran.html">
+    <button>Saya Sudah Transfer</button>
+</a>
 
-        <button type="submit">Lanjutkan ➜</button>
-    </form>
+<button onclick="history.back()">← Kembali</button>
+
 </div>
 
 </body>
