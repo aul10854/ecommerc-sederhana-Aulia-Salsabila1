@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
     <title>Produk Toko Baju</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -9,25 +11,23 @@
             margin: 0;
         }
 
-        /* Menu */
-        .menu {
-            background-color: #FFB6C1;
-            padding: 10px;
+        nav {
+            background-color: #6A0DAD;
+            padding: 15px;
             text-align: center;
         }
 
-        .menu a {
+        nav a {
             color: white;
             margin: 15px;
             text-decoration: none;
             font-weight: bold;
         }
 
-        .menu a:hover {
+        nav a:hover {
             color: yellow;
         }
 
-        /* Produk */
         .container {
             display: flex;
             justify-content: center;
@@ -36,7 +36,7 @@
         }
 
         .produk {
-            background-color: white;
+            background: white;
             width: 200px;
             margin: 15px;
             padding: 10px;
@@ -48,6 +48,7 @@
         .produk img {
             width: 100%;
             height: 200px;
+            object-fit: cover;
         }
 
         .harga {
@@ -56,116 +57,113 @@
         }
 
         button {
-            background-color: green;
+            background: green;
             color: white;
-            padding: 8px;
+            padding: 8px 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: darkgreen;
+            background: darkgreen;
+        }
+
+        .notif{
+            position:fixed;
+            top:20px;
+            right:20px;
+            background:#6A0DAD;
+            color:white;
+            padding:15px;
+            border-radius:10px;
+            display:none;
         }
     </style>
 </head>
-    <!-- Menu -->
-    
-    <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="produk.html">Produk</a>
-         <a href="tambah keranjang.html">keranjang</a>
-        <a href="about.html">Tentang Kami</a>
-        <a href="kontak.html">kontak</a>
-       
-        
-    </nav>
 
-    <h2 style="text-align:center;">Daftar Produk Baju</h2>
+<body>
 
-    <!-- Produk -->
-    <div class="container">
+<nav>
+    <a href="index.html">Home</a>
+    <a href="produk.html">Produk</a>
+    <a href="tambah keranjang.html">Keranjang</a>
+    <a href="about.html">Tentang Kami</a>
+    <a href="kontak.html">Kontak</a>
+</nav>
 
-        <div class="produk">
-            <img src="top lengan panjang.jpeg" width="200">
-            <h3>Top Lengan Panjang</h3>
-            <p class="harga">Rp 125.000</p>
-          <button onclick="tambahKeranjang('Top Lengan Panjang',125000)">
-    Beli
-</button>
-        </div>
+<h2 style="text-align:center;">Daftar Produk Baju</h2>
 
-        <div class="produk">
-             <img src="rok pendek.jpeg" width="200">
-            <h3>rok pendek</h3>
-            <p class="harga">Rp 100.000</p>
-           <button onclick="tambahKeranjang('Rok Pendek',100000)">
-    Beli
-</button>
-        </div>
+<div class="container">
 
-        <div class="produk">
-            <img src="kemeja.jpeg" width="200">
-            <h3>Kemeja</h3>
-            <p class="harga">Rp 130.000</p>
-            <button onclick="tambahKeranjang('kemeja',130000)">
-    Beli
-        </div>
-        <div class="produk">
-            <img src="kemeja botting.jpeg" width="200">
-            <h3>Kemeja botting</h3>
-            <p class="harga">Rp 110.000</p>
-            <button onclick="tambahKeranjang('kemeja botting',110000)">
-    Beli
-        </div>
-         <div class="produk">
-            <img src="ribben henley.jpeg" width="200">
-            <h3>ribben henley</h3>
-            <p class="harga">Rp 90.000</p>
-            <button onclick="tambahKeranjang('Ribben henley',90000)">
-    Beli
-        </div>
- <div class="produk">
-            <img src="celana hotpants.jpeg" width="200">
-            <h3>celana hotpants</h3>
-            <p class="harga">Rp 80.000</p>
-            <button onclick="tambahKeranjang('ceana hotpants',80000)">
-    Beli
-        </div>
-        <div class="produk">
-            <img src="sweatpants.jpeg" width="200">
-            <h3>sweatpants</h3>
-            <p class="harga">Rp 145.000</p>
-           <button onclick="tambahKeranjang('sweatpants',145000)">
-    Beli
-        </div>
-         <div class="produk">
-            <img src="flared top blouse.jpeg" width="200">
-            <h3>flared top blouse</h3>
-            <p class="harga">Rp 255.000</p>
-            <button onclick="tambahKeranjang('flared top blouse',255000)">
-    Beli
-        </div>
-        <div class="produk">
-            <img src="jeans.jpeg" width="200">
-            <h3>jeans</h3>
-            <p class="harga">Rp 260.000</p>
-            <button onclick="tambahKeranjang('jeans',260000)">
-    Beli
-        </div>
-
+    <div class="produk">
+        <img src="top lengan panjang.jpeg">
+        <h3>Top Lengan Panjang</h3>
+        <p class="harga">Rp 125.000</p>
+        <button onclick="tambahKeranjang('Top Lengan Panjang',125000)">Beli</button>
     </div>
-</body>
-    <body>
 
-<div id="notif" class="notif">
-   
+    <div class="produk">
+        <img src="rok pendek.jpeg">
+        <h3>Rok Pendek</h3>
+        <p class="harga">Rp 100.000</p>
+        <button onclick="tambahKeranjang('Rok Pendek',100000)">Beli</button>
+    </div>
+
+    <div class="produk">
+        <img src="kemeja.jpeg">
+        <h3>Kemeja</h3>
+        <p class="harga">Rp 130.000</p>
+        <button onclick="tambahKeranjang('Kemeja',130000)">Beli</button>
+    </div>
+
+    <div class="produk">
+        <img src="kemeja botting.jpeg">
+        <h3>Kemeja Botting</h3>
+        <p class="harga">Rp 110.000</p>
+        <button onclick="tambahKeranjang('Kemeja Botting',110000)">Beli</button>
+    </div>
+
+    <div class="produk">
+        <img src="ribben henley.jpeg">
+        <h3>Ribben Henley</h3>
+        <p class="harga">Rp 90.000</p>
+        <button onclick="tambahKeranjang('Ribben Henley',90000)">Beli</button>
+    </div>
+
+    <div class="produk">
+        <img src="celana hotpants.jpeg">
+        <h3>Celana Hotpants</h3>
+        <p class="harga">Rp 80.000</p>
+        <button onclick="tambahKeranjang('Celana Hotpants',80000)">Beli</button>
+    </div>
+
+    <div class="produk">
+        <img src="sweatpants.jpeg">
+        <h3>Sweatpants</h3>
+        <p class="harga">Rp 145.000</p>
+        <button onclick="tambahKeranjang('Sweatpants',145000)">Beli</button>
+    </div>
+
+    <div class="produk">
+        <img src="flared top blouse.jpeg">
+        <h3>Flared Top Blouse</h3>
+        <p class="harga">Rp 255.000</p>
+        <button onclick="tambahKeranjang('Flared Top Blouse',255000)">Beli</button>
+    </div>
+
+    <div class="produk">
+        <img src="jeans.jpeg">
+        <h3>Jeans</h3>
+        <p class="harga">Rp 260.000</p>
+        <button onclick="tambahKeranjang('Jeans',260000)">Beli</button>
+    </div>
+
 </div>
-</div>
-        
-</script>
-        <script>
+
+<div id="notif" class="notif"></div>
+
+<script>
 function tambahKeranjang(nama, harga){
 
     let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
@@ -185,19 +183,14 @@ function tambahKeranjang(nama, harga){
     localStorage.setItem("keranjang", JSON.stringify(keranjang));
 
     let notif = document.getElementById("notif");
-    if(notif){
-        notif.innerHTML = "🛒 " + nama + " berhasil ditambahkan ke keranjang!";
-        notif.style.display = "block";
+    notif.innerHTML = "🛒 " + nama + " berhasil ditambahkan ke keranjang!";
+    notif.style.display = "block";
 
-        setTimeout(function(){
-            notif.style.display = "none";
-        },2000);
-    }else{
-        alert("Produk berhasil ditambahkan ke keranjang!");
-    }
+    setTimeout(function(){
+        notif.style.display = "none";
+    },2000);
 }
 </script>
+
 </body>
-</html>
-<nav>
 </html>
