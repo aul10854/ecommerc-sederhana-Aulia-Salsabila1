@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>E-Wallet</title>
+    <meta charset="UTF-8">
+    <title>E-Wallet</title>
 </head>
 <body>
 
 <h2>Pembayaran E-Wallet</h2>
 
-<label><input type="radio" name="ewallet"> DANA</label><br>
-<label><input type="radio" name="ewallet"> OVO</label><br>
-<label><input type="radio" name="ewallet"> GoPay</label><br>
-<label><input type="radio" name="ewallet"> ShopeePay</label><br><br>
- 
-    <button onclick="history.back()">← Kembali</button>
-</a>
+<form action="konfirmasi_pembayaran.html">
 
-<button>Bayar</button>
+    <label><input type="radio" name="ewallet" value="DANA" required> DANA</label><br>
+    <label><input type="radio" name="ewallet" value="OVO"> OVO</label><br>
+    <label><input type="radio" name="ewallet" value="GoPay"> GoPay</label><br>
+    <label><input type="radio" name="ewallet" value="ShopeePay"> ShopeePay</label><br><br>
+
+    <button type="button" onclick="history.back()">← Kembali</button>
+
+    <button type="submit">Bayar</button>
+
+</form>
 
 </body>
 </html>
