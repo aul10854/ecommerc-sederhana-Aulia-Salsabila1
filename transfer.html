@@ -1,26 +1,63 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
     <title>Transfer Bank</title>
-</head>
-<body>
 
-<h2>Pembayaran Transfer Bank</h2>
+    <style>
+        body{
+            background-color:pink;
+            font-family:Arial, sans-serif;
+            text-align:center;
+            margin-top:50px;
+        }
 
-<p>Bank BCA</p>
-<p>No. Rekening: 1234567890</p>
-<p>Atas Nama: Bila Store</p>
+        .box{
+            background:white;
+            width:400px;
+            margin:auto;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
 
+        button{
+            background:#6A0DAD;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+            margin:10px;
+        }
 
-   <button onclick="history.back()">← Kembali</button>
-</a>
-  <style>
-        body {
-            background-color: pink;
+        button:hover{
+            background:#4B0082;
         }
     </style>
 
 </head>
+<body>
+
+<div class="box">
+
+<h2>🏦 Pembayaran Transfer Bank</h2>
+
+<p><b>Bank:</b> BCA</p>
+<p><b>No. Rekening:</b> 1234567890</p>
+<p><b>Atas Nama:</b> Bila Store</p>
+
+<p>Silakan transfer sesuai total belanja Anda.</p>
+<p>Setelah transfer berhasil, klik tombol di bawah.</p>
+
+<a href="konfirmasi_pembayaran.html">
+    <button>Saya Sudah Transfer</button>
+</a>
+
+<button onclick="history.back()">← Kembali</button>
+
+</div>
+
 </body>
 </html>
+
