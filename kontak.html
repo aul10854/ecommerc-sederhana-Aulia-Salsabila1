@@ -114,18 +114,28 @@
     <div class="info">📧 Email: bilastore@email.com</div>
     <div class="info">⏰ Jam Operasional: 08.00 - 21.00 WIB</div>
 
-    <form>
-        <input type="text" placeholder="Nama" required>
-        <input type="email" placeholder="Email" required>
-        <textarea rows="4" placeholder="Pertanyaan" required></textarea>
-        <button type="submit">Kirim Pesan</button>
-    </form>
+   <form onsubmit="kirimPesan(event)">
+    <input type="text" placeholder="Nama" required>
+    <input type="email" placeholder="Email" required>
+    <textarea rows="4" placeholder="Pertanyaan" required></textarea>
+    <button type="submit">Kirim Pesan</button>
+
+    <p id="pesan" style="margin-top:10px; color:green; font-weight:bold;"></p>
+</form>
+   
 
     <div class="footer">
         © 2026 Bila Store. All Rights Reserved.
     </div>
 
 </div>
+<script>
+function kirimPesan(event) {
+    event.preventDefault();
 
+    document.getElementById("pesan").innerText =
+        "✅ Pertanyaan berhasil diterima, terima kasih!";
+}
+</script>
 </body>
 </html>
