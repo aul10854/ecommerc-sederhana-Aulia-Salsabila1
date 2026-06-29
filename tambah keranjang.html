@@ -177,14 +177,13 @@ Hapus
 });
 
 document.getElementById("totalHarga").innerHTML="Total : Rp "+total.toLocaleString();
-
 }
 
 function tambahProduk(index){
 
     keranjang[index].jumlah++;
+    localStorage.setItem("keranjang", JSON.stringify(keranjang));
 
-    localStorage.setItem("keranjang",JSON.stringify(keranjang));
 
     tampilKeranjang();
 
@@ -196,7 +195,17 @@ function kurangProduk(index){
         keranjang[index].jumlah--;
     }
 
-    localStorage.setItem("keranjang",JSON.stringify(keranjang));
+    localStorage.setItem("keranjang", JSON.stringify(keranjang));
+
+    tampilKeranjang();
+
+}
+
+function hapusProduk(index){
+
+    keranjang.splice(index,1);
+
+    localStorage.setItem("keranjang", JSON.stringify(keranjang));
 
     tampilKeranjang();
 
