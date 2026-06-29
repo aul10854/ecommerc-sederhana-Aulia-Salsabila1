@@ -154,14 +154,14 @@ button:hover {
 
     <div class="produk">
         <img src="ruffle mini dres.jpeg">
-        <h3>ruffle mini dres</h3>
+        <h3>ruffle mini dress</h3>
         <p class="harga">Rp 180.000</p>
         <button onclick="tambahKeranjang('ruffle mini dress',180000)">Tambah ke Keranjang</button>
     </div>
 
     <div class="produk">
         <img src="mini dres.jpeg">
-        <h3>mini dres</h3>
+        <h3>mini dress</h3>
         <p class="harga">Rp 145.000</p>
         <button onclick="tambahKeranjang('mini dres',145000)">  Tambah ke Keranjang</button>
     </div>
@@ -189,7 +189,7 @@ button:hover {
 
     <div class="produk">
         <img src="pink ruffled dres.jpeg">
-        <h3>pink ruffled dres</h3>
+        <h3>pink ruffled dress</h3>
         <p class="harga">Rp 210.000</p>
         <button onclick="tambahKeranjang('pink ruffled dres',210000)"> Tambah ke Keranjang</button>
     </div>
@@ -227,8 +227,7 @@ button:hover {
 <div id="notif" class="notif"></div>
 
 <script>
-function tambahKeranjang(nama, harga){
-    function cariProduk() {
+     function cariProduk() {
     let input = document.getElementById("cariProduk").value.toLowerCase();
     let produk = document.querySelectorAll(".produk");
 
@@ -242,6 +241,7 @@ function tambahKeranjang(nama, harga){
         }
     });
 }
+function tambahKeranjang(nama, harga){
 
     let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 
